@@ -1,7 +1,7 @@
 .jumbotron {
-    background-color: navy;
+    background-color: #21325a;
     border-radius: 5px;
-    width: 98%;
+    width: 85%;
     margin: 0 auto;
     text-align: center;
     padding-top: 3rem;
@@ -14,18 +14,45 @@
 
 h1 {
     color: white;
-    background-color: navy;
-    font-size: 2rem;
+    background-color: #21325a;
+    font-size: 2.75rem;
     font-weight: 600;
     display: inline-block;
 }
 
 .card {
-    width: 98%;
+    width: 85%;
     max-width: 2000px;
     margin: 2rem auto;
 }
 
 .card-header {
     font-weight: bold;
+}
+
+.blockquote {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.article-title {
+    display: inline;
+}
+
+.blockquote-footer {
+    margin: 0.25rem 0;
+}
+
+.article-anchor {
+    color: black;
+}
+
+blockquote span {
+    background-color: #21325a;
+    color: white;
+    font-weight: bold;
+    padding: 0 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
 }
