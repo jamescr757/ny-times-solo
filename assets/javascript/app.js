@@ -37,22 +37,45 @@ $(document).ready(() => {
 
         // need to lowercase all text before capitalizing with css later
         element.headline.main = element.headline.main.toLowerCase();
-        element.byline.original = element.byline.original.toLowerCase();
 
-        $('#article-bin').append(`
-            <blockquote class="blockquote py-3 pl-3">
-                <span>${index + 1}</span>
+        // need to filter by null bylines 
+        if (element.byline.original) {
+            // if byline in all caps, need to lower case
+            element.byline.original = element.byline.original.toLowerCase();
+            
+            $('#article-bin').append(`
 
-                <a href=${element.web_url} class="article-anchor"
-                target="_blank">
+                <blockquote class="blockquote py-3 pl-3">
+                    <span>${index + 1}</span>
+                    
+                    <a href=${element.web_url} class="article-anchor"
+                    target="_blank">
+                    
+                        <p class="article-title">${element.headline.main}</p>
+                    
+                    </a>
+                    
+                    <footer class="blockquote-footer">${element.byline.original}</footer>
+                </blockquote>
+            `)
 
-                    <p class="article-title">${element.headline.main}</p>
+        } else {
 
-                </a>
+            // if null byline then want to remove the footer
+            $('#article-bin').append(`
 
-                <footer class="blockquote-footer">${element.byline.original}</footer>
-            </blockquote>
-        `)
+                <blockquote class="blockquote py-3 pl-3">
+                    <span>${index + 1}</span>
+                    
+                    <a href=${element.web_url} class="article-anchor"
+                    target="_blank">
+                    
+                        <p class="article-title">${element.headline.main}</p>
+                    
+                    </a>
+                </blockquote>
+            `)
+        }
     }
 
     // run api call when search button clicked
@@ -60,6 +83,9 @@ $(document).ready(() => {
     // passed test
     function searchClick() {
         event.preventDefault();
+
+        // need to auto clear article bin to format properly
+        $("#article-bin").empty();
 
         const fullUrl = getFullUrl();
 
@@ -82,6 +108,11 @@ $(document).ready(() => {
 
             })
         }
+
+        // auto clear search parameters form?
+        // $('#search-term').val("");
+        // $('#start-year').val("");
+        // $('#end-year').val("");
 
     }
 
