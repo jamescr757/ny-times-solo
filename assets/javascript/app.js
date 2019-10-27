@@ -56,7 +56,10 @@ $(document).ready(() => {
                     </a>
                     
                     <footer class="blockquote-footer">${element.byline.original}</footer>
+
+                    <p class="section-name">Section: ${element.section_name}</p>
                 </blockquote>
+
             `)
 
         } else {
@@ -73,7 +76,10 @@ $(document).ready(() => {
                         <p class="article-title">${element.headline.main}</p>
                     
                     </a>
+                    
+                    <p class="section-name">Section: ${element.section_name}</p>
                 </blockquote>
+
             `)
         }
     }
@@ -96,7 +102,7 @@ $(document).ready(() => {
                 method: 'GET'
             })
             .then(response => {
-                // console.log(response);
+                console.log(response);
 
                 const articleNum = $('#article-number').val();
 
