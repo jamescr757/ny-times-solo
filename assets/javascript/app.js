@@ -1,7 +1,7 @@
 $(document).ready(() => {
 
     // global api key and host/endpoint
-    const hostEndpoint = 'https:/api.nytimes.com/svc/search/v2/articlesearch.json?';
+    const hostEndpoint = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?';
     const apiKey = 'api-key=j5A2TiUA2OfdQtG6PM6GZYsUhsBMKy7a';
 
 
